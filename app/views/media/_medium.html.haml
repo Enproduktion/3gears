@@ -1,0 +1,40 @@
+/ Copyright (C) 2017 Enproduktion GmbH
+/
+/ This file is part of 3gears.
+/
+/ 3gears is free software: you can redistribute it and/or modify
+/ it under the terms of the GNU General Public License as published by
+/ the Free Software Foundation, either version 3 of the License, or
+/ (at your option) any later version.
+/
+/ This program is distributed in the hope that it will be useful,
+/ but WITHOUT ANY WARRANTY; without even the implied warranty of
+/ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/ GNU General Public License for more details.
+/
+/ You should have received a copy of the GNU General Public License
+/ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.medium
+  .background
+    - case medium.status
+      - when "tabula_rasa", "uploading"
+        - if editable
+          = render partial: "uploads/upload", locals: { medium: medium }
+      - when "upload_finishing", "upload_finished", "transcoding", 'transcoding_finished'
+        - if editable
+          = render partial: "media/status", locals: { medium: medium }
+        - else
+          %h1= t("medium.status.pending}")
+      - when "transcoding_failed"
+        %h1= t("medium.status.transcoding_failed")
+      - when "published"
+        - if medium.transcodings.only_for_streaming.published.count > 0
+          = display_video(medium, editable, medium.transcodings.only_for_streaming.published, medium.transcodings.only_for_download.published, initialAnnotationId, class: "vjs-default-skin", |
+            width: '100%', style: 'margin: auto', poster: medium.thumbnail.url(:poster))  |
+        - else 
+          = render partial: "media/status", locals: { medium: medium }
+      - when "deleting"
+        %h1= t("medium.status.deleting")
+    -#- if editable && !["tabula_rasa", "deleting"].include?(medium.status)
+    -#  = link_to "X", medium, method: :delete, remote: true, "data-type" => "html", data: { confirm: "?" }

@@ -1,0 +1,40 @@
+/ Copyright (C) 2017 Enproduktion GmbH
+/
+/ This file is part of 3gears.
+/
+/ 3gears is free software: you can redistribute it and/or modify
+/ it under the terms of the GNU General Public License as published by
+/ the Free Software Foundation, either version 3 of the License, or
+/ (at your option) any later version.
+/
+/ This program is distributed in the hope that it will be useful,
+/ but WITHOUT ANY WARRANTY; without even the implied warranty of
+/ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/ GNU General Public License for more details.
+/
+/ You should have received a copy of the GNU General Public License
+/ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+= editable_resource_tag(:dl, @user, resource_path: account_path) do |f|
+
+  = f.select_field :language, language_choices, blank_option: ""
+
+  = Footage.human_attribute_name :username
+  = @user.username
+
+  = Footage.human_attribute_name :first_name
+  = f.string_field :first_name
+
+  = Footage.human_attribute_name :last_name
+  = f.string_field :last_name
+
+  = Footage.human_attribute_name :email
+  %div
+    = @user.email
+    = link_to t("user.change_email"), edit_account_email_path
+
+  = render_license_area_for(@user, editable: true)
+
+= link_to t("user.change_password"), edit_account_password_path
+
+= link_to "DELETE", @user, method: :delete, remote: true, data: { confirm: "?" }, "data-redirect" => localized_root_path

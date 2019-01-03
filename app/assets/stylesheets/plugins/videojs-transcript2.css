@@ -1,0 +1,56 @@
+/*
+Copyright (C) 2017 Enproduktion GmbH
+
+This file is part of 3gears.
+
+3gears is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+#transcript {
+}
+
+.transcript-line {
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.transcript-timestamp {
+  position: absolute;
+  display: inline-block;
+  color: #666;
+  width: 50px;
+}
+
+.transcript-text {
+  display: block;
+  margin-left: 50px;
+  padding-left: 10px;
+}
+
+.transcript-line:hover .transcript-text {
+  border-left: 3px solid #c9f3f3;
+  padding-left: 7px;
+}
+
+.transcript-line.is-active .transcript-text {
+  border-left: 3px solid #ccc;
+  padding-left: 7px;
+  font-weight: bold;
+}
+
+.transcript-line.is-active .transcript-timestamp {
+  color: #111;
+}

@@ -1,0 +1,32 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+- name: Add env variables for root
+  lineinfile: dest=/root/.bashrc regexp={{ item.key }} line="export {{ item.key }}={{ item.value }}"
+  with_items:
+   - "{{ mysql }}"
+
+- name: Add env variables for all users
+  lineinfile: dest=/etc/environment regexp={{ item.key }} line="export {{ item.key }}={{ item.value }}"
+  with_items:
+   - "{{ mysql }}"
+
+- name: Create mysql data directory
+  file: path={{ mysql_directory }} state=directory mode=0755 owner={{ gears_user }} group={{ gears_user }}
+
+- name: Create mysql test data directory
+  file: path={{ mysql_test_directory }} state=directory mode=0755 owner={{ gears_user }} group={{ gears_user }}

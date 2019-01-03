@@ -1,0 +1,83 @@
+/*
+Copyright (C) 2017 Enproduktion GmbH
+
+This file is part of 3gears.
+
+3gears is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+.video-container {
+  margin: 40px auto;
+  position: relative;
+  width: 900px;
+}
+#video {
+  margin: 0;
+  position: absolute;
+}
+#transcript {
+}
+.transcript-header {
+  height: 19px;
+  padding: 2px;
+  font-weight: bold;
+}
+.transcript-selector {
+  height: 25px;
+}
+.transcript-body {
+  overflow-y: scroll;
+  background-color: #e7e7e7;
+  height: 400px;
+}
+
+.transcript-line {
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.transcript-line:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+
+.transcript-timestamp {
+  position: absolute;
+  display: inline-block;
+  color: #333;
+  width: 50px;
+}
+
+.transcript-text {
+  display: block;
+  margin-left: 50px;
+}
+
+.transcript-line:hover,
+.transcript-line:hover .transcript-timestamp,
+.transcript-line:hover .transcript-text {
+  background-color: #777;
+  color: #e7e7e7;
+}
+
+.transcript-line.is-active,
+.transcript-line.is-active .transcript-timestamp,
+.transcript-line.is-active .transcript-text {
+  background-color: #555;
+  color: #e7e7e7;
+}
+
+

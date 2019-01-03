@@ -1,0 +1,28 @@
+/ Copyright (C) 2017 Enproduktion GmbH
+/
+/ This file is part of 3gears.
+/
+/ 3gears is free software: you can redistribute it and/or modify
+/ it under the terms of the GNU General Public License as published by
+/ the Free Software Foundation, either version 3 of the License, or
+/ (at your option) any later version.
+/
+/ This program is distributed in the hope that it will be useful,
+/ but WITHOUT ANY WARRANTY; without even the implied warranty of
+/ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/ GNU General Public License for more details.
+/
+/ You should have received a copy of the GNU General Public License
+/ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.picframe{style: "background-image: url('#{still.content.url(:full)}')"}
+  .picdesc.banderole
+    - if editing_enabled
+      = form_for [movie_or_idea, still], html: {class: 'updateable-resources'} do |f|
+        = f.text_field :title, placeholder: I18n.t("still.untitled"), class: 'fotorama__select'
+        = f.text_area :abstract, placeholder: I18n.t("still.abstract"), class: 'fotorama__select'
+        = button_to t("comment.delete"), [movie_or_idea, still],
+          method: :delete, data: { confirm: t("still.confirm_delete", rescue_format: nil) }
+    - else
+      %h1= still.title
+      %p= still.abstract

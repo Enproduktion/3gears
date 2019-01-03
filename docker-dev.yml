@@ -1,0 +1,123 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+version: '2'
+services:
+
+# 3gears
+  mysql:
+    image: mysql:5.5
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_PASSWORD
+      - MYSQL_USER
+      - MYSQL_DATABASE
+      - MYSQL_PORT
+    ports:
+      - 3306:3306
+    volumes:
+      - ${MYSQL_DIRECTORY}:/var/lib/mysql
+  redis:
+    image: redis:2.8
+  3gears:
+    build: .
+    image: 3gears:latest
+    command: foreman start
+    environment:
+      - RAILS_ENV
+    ports:
+      - 3000:3000
+    volumes:
+      - ${GEARS_DIRECTORY}:/3gears
+
+# 3gears test
+  mysqltest:
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_PASSWORD=
+      - MYSQL_USER=
+      - MYSQL_DATABASE=
+      - MYSQL_PORT
+    volumes:
+      - ${MYSQL_TEST_DIRECTORY}:/var/lib/mysql
+  3gears-test:
+    build: .
+    image: 3gears:latest
+    command: /3gears/bin/rspec
+    environment:
+      - RAILS_ENV=test
+    volumes:
+      - ${GEARS_DIRECTORY}:/3gears
+
+# 3vaults
+  3vaults:
+    image: 3v-core
+    env_file:
+      - docker/production.env
+    ports:
+      - 4567:4567
+    volumes:
+      - ./3vaults/src:/3vaults
+      - ./data:/data
+    depends_on:
+      - redis
+
+  transcoder:
+    image: 3v-transcoder
+    env_file:
+      - docker/production.env
+    volumes:
+      - ./3vaults/src:/3vaults
+      - ./data:/data
+    depends_on:
+      - redis
+
+  receiver:
+    image: 3v-receiver
+    env_file:
+      - docker/production.env
+    ports:
+      - 4568:4568
+    volumes:
+      - ./3vaults/src:/3vaults
+      - ./data:/data
+
+  s3upload:
+    image: 3v-s3upload
+    env_file:
+      - docker/production.env
+    volumes:
+      - ./3vaults/src:/3vaults
+      - ./data:/data
+    depends_on:
+      - redis
+      - s3
+
+  3v-redis:
+    image: redis
+
+  s3:
+    image: minio/minio
+    env_file:
+      - docker/production.env
+    ports:
+      - 9000:9000
+    volumes:
+      - ./s3:/export
+    command: [server, /export]

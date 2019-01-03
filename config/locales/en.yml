@@ -1,0 +1,766 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+en:
+
+  unauthorized:
+    manage:
+      all: "Access denied"
+
+  time:
+    formats:
+      time: "%H:%M:%S"
+
+  titleme:
+    formats:
+      short: "%B %d / %Y"
+
+  tag_editor:
+    placeholder: 'Contents'
+
+  article:
+    create: 'Create Article'
+    article: "article"
+    save: 'Save'
+    new_asset: "New asset"
+    markdown_cheat_sheet: "Markdown cheat sheet"
+    abstract_blank: "Abstract"
+    content_blank: "Content"
+    read_more: "Read More"
+    delete_article: 'Delete Article'
+    delete_asset: 'Delete Asset'
+  articles:
+    articles: "articles"
+    untitled: "Untitled article"
+
+  comment:
+    confirm_delete: "Confirm delete"
+    delete: "Delete"
+    post: "Post"
+    posting: "Posting"
+    add: "add comment"
+
+  common:
+    back: "back"
+    or: "or"
+    choose_selection: "Choose your option"
+    delete: "Delete"
+    down: "Down"
+    up: "Up"
+    user_mail: "username or email"
+    pm: "personal message"
+    any: "any"
+    name: "name"
+    date: "date"
+    footer: "imprint | privacy | help"
+    are_you_sure: "Are you sure?"
+
+  license:
+    name: "License"
+    desc: "Description"
+    url: "License-URL"
+    holder: "Rightholder"
+    email: "E-mail address"
+    address: "Address"
+    custom: "custom license"
+    creative_commons: "Creative Commons"
+    preset:
+      names:
+        CC0: "CC0"
+        CC_BY: "CC-BY"
+        CC_BY_ND: "CC-BY-ND"
+        CC_BY_NC_SA: "CC-BY-NC-SA"
+        CC_BY_SA: "CC-BY-SA"
+        CC_BY_NC: "CC-BY-NC"
+        CC_BY_NC_ND: "CC-BY-NC-ND"
+        beerware: "Beerware"
+      descriptions:
+        CC0: "You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
+        CC_BY: "This license lets others distribute, remix, tweak, and build upon your work, even commercially, as long as they credit you for the original creation. This is the most accommodating of licenses offered. Recommended for maximum dissemination and use of licensed materials."
+        CC_BY_ND: "This license allows for redistribution, commercial and non-commercial, as long as it is passed along unchanged and in whole, with credit to you."
+        CC_BY_NC_SA: "This license lets others remix, tweak, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms."
+        CC_BY_SA: "This license lets others remix, tweak, and build upon your work even for commercial purposes, as long as they credit you and license their new creations under the identical terms. This license is often compared to “copyleft” free and open source software licenses. All new works based on yours will carry the same license, so any derivatives will also allow commercial use. This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects."
+        CC_BY_NC: "This license lets others remix, tweak, and build upon your work non-commercially, and although their new works must also acknowledge you and be non-commercial, they don’t have to license their derivative works on the same terms."
+        CC_BY_NC_ND: "This license is the most restrictive of our six main licenses, only allowing others to download your works and share them with others as long as they credit you, but they can’t change them in any way or use them commercially."
+        beerware: "As long as you retain this notice you can do whatever you want with this stuff. If we meet some day, and you think this stuff is worth it, you can buy me a beer in return."
+      urls:
+        CC0: "http://creativecommons.org/publicdomain/zero/1.0/"
+        CC_BY: "http://creativecommons.org/licenses/by/3.0/"
+        CC_BY_ND: "http://creativecommons.org/licenses/by-nd/3.0"
+        CC_BY_NC_SA: "http://creativecommons.org/licenses/by-nc-sa/3.0"
+        CC_BY_SA: "http://creativecommons.org/licenses/by-sa/3.0"
+        CC_BY_NC: "http://creativecommons.org/licenses/by-nc/3.0"
+        CC_BY_NC_ND: "http://creativecommons.org/licenses/by-nc-nd/3.0"
+        beerware: ""
+
+  category:
+    all: "All"
+    names:
+      music: "music"
+      politics: "politics"
+      sport: "sport"
+
+  creations:
+    creations: "Creations"
+    all: "All creations"
+    footage: "Footage"
+    ideas: "Ideas"
+    least_viewed: "unexplored"
+    most_viewed: "most viewed"
+    movies: "Movies"
+    new_footage: "New footage"
+    new_idea: "New Idea"
+    new_movie: "New Movie"
+    new_collection: "New Collection"
+    newest: "newest"
+    oldest: "oldest"
+    different_user: "Choose different user"
+
+  crew_member:
+    add_crew_member: "Add crew member"
+    add_crew_member_title: "Add crew member title"
+    who_placeholder: "Add crew member"
+    list_empty: "No Members"
+  occupation:
+    all: "All"
+    types:
+      production_department: "Production"
+      directing_department: "Director"
+      camera_department: "Camera"
+      light_department: "Light"
+      style_department: "Styling"
+      postpro_department: "Post-Production"
+      sound_department: "Sound Department"
+      most_used: "Most Used"
+    fields:
+      camera: "Camera"
+      sound: "Sound"
+      light: "Light"
+      editing: "Editing"
+      postproduction: "Post Production"
+      interviewer: "Interviewer"
+      production: "Producer"
+      pa: "Production Assistant"
+      director: "Director"
+      research: "Researcher"
+      projectmgmt: "Project Manager"
+
+  error_messages:
+    invalid_login_password_combination: "Login/Password combination is not valid"
+    login_invalid: "Login invalid"
+    password_invalid: "Password invalid"
+    connection_error: "Connection error (Code %{status})"
+    parser_error: "Parser error"
+    forbidden: "You are not allowed to see this page"
+
+  footage:
+    create: 'Create Footage'
+    save: 'Save'
+    publish: "Publish"
+    collections: 'Collections'
+    state:
+      not_published: "Not Published"
+      published: "Published"
+    untitled: "Untitled footage"
+    tech_spec: "technical"
+    spec: "Spec"
+    team: "Team"
+    popular: "popular"
+    similar: "similar"
+    used_in: "used in"
+    delete: "delete footage"
+    use: "use"
+    addtomovie: "add to movie or idea"
+    worked_on: "Footage worked on"
+    infos: "Infos"
+    synopsis: "Synopsis"
+    abstract: "Abstract"
+    transcript: "Transcript"
+    crew: "Crew"
+    publish: "Publish"
+    delete: "Delete"
+    delete_warning: "Warning: This operation can not be undone."
+    delete_footage_headline: "Delete Footage"
+    delete_medium_headline: "Delete Media File"
+    delete_button: "Delete"
+    delete_successful: "The footage was successfully deleted."
+    update_success: "Footage successfully updated"
+    update_failure: "There has been an error updating the footage"
+    part_of_following_collections: "Part of following collections"
+    metadata:
+      title: "Metadata"
+      cast: "Cast (comma seperated)"
+      country: "Country"
+      original_format: "Original Format"
+      original_length: "Original Length (in meters)"
+      duration: "Duration"
+      original_language: "Original Language"
+      year_of_reference: "Year of Reference"
+      genre: "Genre"
+      citations: "Context (comma seperated)"
+      source: "Free annotation"
+      upload_file: "Upload metadata file"
+
+  movies:
+    worked_on: "movies worked on"
+
+  subscriptions:
+    go_away: "go away"
+    new_pos: "get informed if a new position opens up"
+
+  frontpage:
+    footage: "Watch all the footage and pick your favourites."
+    movies: "Browse through the most watched movies and pick your favourite."
+    read_more: "... read more"
+    see_more: "read all articles"
+    welcome: "Welcome to 3gears"
+    subwelcome: ""
+    page_title: "Welcome"
+
+  pages:
+    sponsors: 'Sponsors'
+
+  inplace_edit:
+    "yes": "Yes"
+    "no": "No"
+    finalize: "Finalize"
+    not_published: "publish"
+    published: "unpublish"
+
+  medium:
+    download: "Download"
+    download_dialog_title: "Download video"
+    delete_successful: "The medium was successfully deleted."
+    status:
+      empty: "empty"
+      pending: "pending"
+      transcoding: "transcoding"
+      transcoding_failed: "transcoding failed"
+      deleting: "deleting"
+      pick_thumb: "pick thumbnail"
+
+  idea:
+    untitled: "Untitled idea"
+
+  movie:
+    private: "private"
+    public: "public"
+    read_script: "read script"
+    finalize: "Finalize"
+    untitled: "Untitled Collection"
+    synopsis: "Synopsis"
+    abstract: "Abstract"
+    popular: "popular"
+    similar: "similar"
+    delete_collection_header: "Delete collection"
+    delete_collection_button: "Delete collection"
+    delete_successful: "The collection was successfully deleted."
+    script:
+      delete: "delete script"
+      delete_confirm: "Do you really want to delete the script?"
+      add: "add new script"
+      change: "change script"
+    # genre:
+    #   fiction:
+    #     fiction: "Fictional Film"
+    #     action: "action"
+    #     arthouse: "arthouse"
+    #     comedy: "comedy"
+    #     crime: "crime"
+    #     mondo: "Mondo Film"
+    #     drama: "drama"
+    #     erotic: "erotic"
+    #     experimental: "experimental"
+    #     fantasy: "fantasy"
+    #     noir: "Film Noir"
+    #     horror: "Horror"
+    #     martial: "Martial Arts"
+    #     musical: "Musical"
+    #     mystery: "Mystery"
+    #     performance: "Performance"
+    #     politics: "Politics"
+    #     romance: "Romance"
+    #     scifi: "Sci-Fi"
+    #     thriller: "Thriller"
+    #   documentary:
+    #     documentary: "Documentary"
+    #     feature: "feature"
+    #     report: "report"
+    #     ethno: "ethnographic documentary"
+    #     poetic: "poetic documentary"
+    #     social: "socio-critical documentary"
+    #     verite: "Cinéma Vérité"
+    #     direct: "Direct Cinema"
+    #     mockumentary: "Mockumentary"
+    #     reality: "reality documentary"
+    #     semidocumentary: "Semidocumentary"
+    #     travel: "Travel Documentary"
+    #     nature: "Nature Documentary"
+    #     docudrama: "docudrama"
+    #     clip: "documentary clip (ENG)"
+    #   attributes:
+    #     animated: "animated"
+
+  nav:
+    account: "Account"
+    myaccount: "My Account"
+    user_creations: "My Creations"
+    language: "language"
+    register: "register"
+    login: "Login"
+    logout: "Logout"
+    home: "Home"
+    ideas: "Ideas"
+    footage: "Footage"
+    movies: "Movies"
+    users: "storyteller"
+    settings: "Settings"
+    profile: "Profile"
+    act_as_header: "Act as:"
+    new_organisation_placeholder: "New Organisation"
+    create_organisation_button: "Create Organisation"
+
+  notification:
+    notifications: "notifications"
+    added_as_crew_member_subject: "you have been added as a crew member"
+    invite_crew_member_subject: "you have been invited as a crew member"
+    added_as_supplier_subject: "you have been added as a supplier"
+    invite_supplier_subject: "you have been invited as a supplier"
+    report_crew_open_subject: "crew member slot open"
+    messages:
+      added_as_crew_member:
+        movie_or_idea: "You have been added as a crew member to %{title}"
+        footage: "You have been added as a crew member to %{title}"
+      added_as_supplier:
+        movie_or_idea: "You have been added as a supplier to %{title}"
+        footage: "You have been added a supplier to %{title}"
+
+  search:
+    search: "Search"
+    search_empty: ""
+
+  upload:
+    busy: "busy"
+
+  uploader:
+    completed: "Upload ready"
+    drop_here: "drop file here"
+    file_is_empty: "File is empty"
+    pause: "pause"
+    reselect_files: "Please reselect the file"
+    resume: "Resume"
+    select_file: "select file"
+    to_resume: "Choose the following file to resume uploading:"
+    to_upload: "To upload your movie please"
+
+  user:
+    login_form:
+      username_placeholder: "Username"
+      password_placeholder: "Password"
+      submit: "Login"
+      register_link: "Register"
+      forgot_password_link: "Forgot password"
+    edit:
+      roles_header: "Berechtigung"
+      security_header: "Security"
+      password: "New password"
+      password_confirmation: "New password confirmation"
+      submit_password_button: "Save new password"
+      delete_header: "Delete Account"
+      delete_button: "Delete Account"
+      are_you_sure_to_delete: "By accepting this dialogue, the account and all it's data will be removed. This can not be undone. Continue?"
+    firstname: "Firstname"
+    lastname: "Lastname"
+    email: "e-mail"
+    abstract: "Abstract"
+    company: "Company/Organization"
+    street: "Street"
+    zip: "ZIP"
+    city: "City"
+    country: "Country"
+    about: "about me"
+    page_title: "Storyteller"
+    joined_at: "joined at"
+    change_email: "Change email"
+    change_password: "Change password"
+    confirmation_mail_subject: "3dox.confirm your account"
+    email_verification_subject: "3dox.verify your email address"
+    login: "login"
+    login_first: "Login first"
+    logout_first: "Logout first"
+    not_found: "Not found"
+    password_reset_subject: "3dox.reset your password"
+    register: "Register"
+    reset_password: "Reset password"
+    find_similar: "find similar"
+    invitation_mail_subject: "3dox Invitation"
+
+  organisation:
+    abstract: "Abstract"
+    contact: "Contact"
+    users: "Administrators"
+    email: "Email"
+    company: "Organisation name"
+    first_address: "Adress"
+    second_address: "Adress 2"
+    zip: "Zip"
+    city: "City"
+    country: "Country"
+    collections: "Collections"
+    delete_header: "Delete Account"
+    delete_button: "Delete Account"
+    are_you_sure_to_delete: "By accepting this dialogue, the account and all it's data will be removed. This can not be undone. Continue?"
+    wrong_password: "Wrong password"
+    created: "Organisation created"
+    not_found: "Organisation not found"
+    saved: "Organisation saved"
+    creation_failed: "Creation of organisation failed"
+
+  social_share:
+    info: "By acitivating this field, your data may get stored on US-soil.<em>i</em>."
+
+  still:
+    add: 'Add Still'
+    new_image: 'New Image'
+    untitled: "Untitled still"
+    confirm_delete: "Confirm delete"
+    abstract: "Abstract"
+    create_success: 'Still added'
+    update_success: 'Still saved'
+
+  document:
+    create_success: "Document created"
+    confirm_delete: "Confirm delete"
+
+  stuff:
+    add_stuff: "Add stuff"
+    add_stuff_title: "Add stuff"
+    invited: "invited"
+    open: "open"
+
+  account:
+    register:
+      register: "Register"
+      registered: "Welcome To 3gears"
+      we_sent_you_an_email: "We sent you an email to activate the account!"
+      fulltext: "Register a new account"
+      info: "to upload your content and work on movies"
+      confirmation: "Confirmation successful."
+      confirmation_invalid: "Invalid confirmation code. Maybe expired? Click to resend..."
+      placeholder:
+        username: "Username"
+        email: "Email"
+        first_name: "First Name"
+        last_name: "Last Name"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+    created: "Account created"
+    signup: "Sign Up"
+    email:
+      update: "Check your mails to confirm you new adress!"
+      updated: "Email updated"
+      token_invalid: "Invalid confirmation token"
+    password:
+      changed: "Password changed"
+      reset_sent: "Password reset request sent"
+      confirmation_invalid: "Invalid confirmation code"
+    mailer:
+      salutation: "Dear"
+      welcome: "welcome to"
+      finish_reg: "in order to finish the registration process, please click on the following link:"
+      wishes: "We wish you a great time here at"
+      team: "team"
+      your: "your"
+      brake: "========"
+      disclaimer: "This e-mail has been generated automatically. Please reply to:"
+      updatemail: "click on the following link to confirm your new address:"
+      updatepass: "click on the following link to confirm your new password:"
+      passreset: ""
+    invitation_needed: "Invitation needed"
+    invalid_invitation: "Invalid invitation. Used already?"
+
+  session:
+    login: "login"
+    really_login: "Login?"
+    log_in: "Log in"
+    login_info: "login to begin sharing"
+
+  movie_or_idea:
+    save: 'Save'
+    create: 'Create Collection'
+    update_success: "Movie successfully updated"
+    find_similar: "find similar projects"
+    delete: "delete project"
+    reallydelete: "Do you really want to delete this project?"
+    interviews:
+      one: '1 Interview'
+      other: '%{count} Interviews'
+    watch: 'Watch'
+    share: 'Share'
+
+  activerecord:
+    attributes:
+      user:
+        login: "Username or email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      movie:
+        title: "Title"
+        synopsis: "Synopsis"
+        abstract: "Abstract"
+        user: "Creator"
+        budget_raised: "Raised Budget"
+        budget_desc: "About the budget"
+        flattr_id: "Flattr"
+        created_at: "Created at"
+        stuff: "Stuff"
+        tag_list: "Tags"
+        add_tags: "add tags:"
+
+  server:
+    busy: "busy"
+
+  search:
+    collections: "Collections"
+    topics: "Topics"
+    years: "Years"
+    show:
+      header: "Search"
+      results_header: "Search results"
+    search_bar:
+      placeholder: "Hit enter to apply search"
+    search_range_selector:
+      empty_state_message: "Add footage with years to activate Timeline"
+      set_as_filter: "Set as filter"
+
+
+### NOT IN USE from here ###
+
+  countries:
+    country: "Country"
+    countries: "Countries"
+    asia:
+      asia: "Asia"
+      afghanistan: "Afghanistan"
+      armenia: "Armenia"
+      azerbaijan: "Azerbaijan"
+      bahrain: "Bahrain"
+      bangladesh: "Bangladesh"
+      bhutan: "Bhutan"
+      brunei: "Brunei"
+      burma: "burma"
+      cambodia: "Cambodia"
+      china: "China"
+      east_timor: "East Timor"
+      hong_kong: "Hong Kong"
+      india: "India"
+      indonesia: "Indonesia"
+      iran: "Iran"
+      iraq: "Iraq"
+      israel: "Israel"
+      japan: "Japan"
+      jordan: "Jordan"
+      north_korea: "North Korea"
+      south_korea: "South Korea"
+      kuwait: "Kuwait"
+      kyrgyzstan: "Kyrgyzstan"
+      laos: "Laos"
+      lebanon: "Lebanon"
+      malaysia: "Malaysia"
+      maldives: "Maldives"
+      mongolia: "Mongolia"
+      nepal: "Nepal"
+      oman: "Oman"
+      pakistan: "Pakistan"
+      palestine: "Palestine"
+      philippines: "Philippinen"
+      qatar: "Qatar"
+      russia: "Russia"
+      saudi_arabia: "Saudi Arabia"
+      singapore: "Singapur"
+      sri_lanka: "Sri Lanka"
+      syria: "Syria"
+      tajikistan: "Tajikistan"
+      thailand: "Thailand"
+      turkmenistan: "Turkmenistan"
+      united_arab_emirates: "United Arab Emirates"
+      uzbekistan: "Uzbekistan"
+      vietnam: "Vietnam"
+      yemen: "Yemen"
+    africa:
+      africa: "Africa"
+      algeria: "Algeria"
+      angola: "Angola"
+      benin: "Benin"
+      botswana: "Botswana"
+      burkina_faso: "Burkina Faso"
+      burundi: "Burundi"
+      cameroon: "Cameroon"
+      cape_verde: "Cape Verde"
+      central_african_republic: "Central Africa Republic"
+      chad: "Chad"
+      comoros: "Comoros"
+      democratic_congo: "Democratic Republic of the Congo"
+      republic_congo: "Republic of the Congo"
+      cote_iviore: "Cote d'lvoire"
+      djibouti: "Djibouti"
+      egypt: "Egypt"
+      equatorial_guinea: "Equatorial Guinea"
+      eritrea: "Eritrea"
+      ethiopia: "Ethiopia"
+      gabon: "Gabonese"
+      cambia: "The Republic of Gambia"
+      ghana: "Ghana"
+      guinea: "Guinea"
+      guinea_bissau: "Guinea Bissau"
+      kenya: "Kenya"
+      lesotho: "Lesotho"
+      liberia: "Liberia"
+      libya: "Libya"
+      macao: "Macao"
+      madagascar: "Madagascar"
+      malawi: "Malawi"
+      mali: "Mali"
+      mauritania: "Mauritania"
+      mauritius: "Mauritius"
+      morocco: "Morocco"
+      mozambique: "Mozambique"
+      namibia: "Namibia"
+      niger: "Niger"
+      nigeria: "Nigeria"
+      rwanda: "Rwanda"
+      sao_tome: "Sao Tome and Principe"
+      senegal: "Senegal"
+      seychelles: "Seychelles"
+      sierra_leone: "Sierra Leone"
+      somalia: "Somalia"
+      south_africa: "South Africa"
+      south_sudan: "South Sudan"
+      sudan: "Sudan"
+      swaziland: "Swaziland"
+      tanzania: "Tanzania"
+      togo: "Togo"
+      tunisia: "Tunisia"
+      Uganda: "Uganda"
+      zambia: "Zambia"
+      zimbabwe: "Zimbabwe"
+    europe:
+      europe: "Europe"
+      albania: "Albania"
+      andorra: "Andorra"
+      austria: "Austria"
+      belarus: "Belarus"
+      belgium: "Belgium"
+      bosnia: "Bosnia"
+      bulgaria: "Bulgaria"
+      croatia: "Croatia"
+      cyprus: "Cyprus"
+      czech: "Czech Republic"
+      denmark: "Denmark"
+      estonia: "Estonia"
+      finland: "Finland"
+      france: "France"
+      georgia: "Georgia"
+      germany: "Germany"
+      greece: "Greece"
+      hungary: "Hungary"
+      iceland: "Iceland"
+      ireland: "Ireland"
+      italy: "Italy"
+      kazakhstan: "Kazakhstan"
+      kosovo: "Kosovo"
+      latvia: "Latvia"
+      liechtenstein: "Liechtenstein"
+      lithuania: "Lithuania"
+      luxembourg: "Luxembourg"
+      macedonia: "Republic of Macedonia"
+      malta: "Malta"
+      moldova: "Moldova"
+      monaco: "Monaco"
+      montenegro: "Montenegro"
+      netherlands: "Netherlands"
+      norway: "Norway"
+      poland: "Poland"
+      portugal: "Portugal"
+      romania: "Romania"
+      san_marino: "San Marino"
+      serbia: "Serbia"
+      slovakia: "Slovakia"
+      slovenia: "Slovenia"
+      spain: "Spain"
+      sweden: "Sweden"
+      switzerland: "Switzerland"
+      turkey: "Turkey"
+      ukraine: "Ukraine"
+      uk: "United Kingdom"
+      vatican_city: "Vatican City"
+    northamerica:
+      northamerica: "North America"
+      antigue_barbuda: "Antigua and Barbuda"
+      bahamas: "The Bahamas"
+      barbados: "Barbados"
+      belize: "Belize"
+      canada: "Canada"
+      costa_rica: "Costa Rica"
+      cuba: "Cuba"
+      dominica: "Dominica"
+      dominican_republic: "Dominican Republic"
+      el_salvador: "El Salvador"
+      grenada: "Grenada"
+      guatemala: "Guatemala"
+      haiti: "Haiti"
+      honduras: "Honduras"
+      jamaica: "Jamaica"
+      mexico: "Mexico"
+      nicaragua: "Nicaragua"
+      panama: "Panama"
+      saint_kitts: "Saint Kitts and Nevis"
+      saint_lucia: "Saint Lucia"
+      saint_vincent: "Saint Vincent and Grenadines"
+      trinidad_tobago: "Trinidad and Tobago"
+      us: "United States"
+    southamerica:
+      southamerica: "Southamerica"
+      argentina: "Argentina"
+      bolivia: "Bolivia"
+      brazil: "Brazil"
+      chile: "Chile"
+      colombia: "Colombia"
+      ecuador: "Ecuador"
+      guyana: "Guyana"
+      paraguay: "Paraguay"
+      peru: "Peru"
+      suriname: "Suriname"
+      uruguay: "Uruguay"
+      venezuela: "Venezuela"
+    oceania:
+      oceania: "Oceania"
+      australia: "Australia"
+      cook: "Cook Islands"
+      fidji: "Fidji"
+      kiribati: "Kiribati"
+      marshall_islands: "Marshall Islands"
+      micronesia: "Federated States of Micronesia"
+      nauru: "Nauru"
+      new_zealand: "New Zealand"
+      palau: "Palau"
+      papua_new_guinea: "Papua New Guinea"
+      solomon_islands: "Solomon Islands"
+      samoa: "Samoa"
+      tonga: "Tonga"
+      tuvalu: "Tuvalu"
+      vanuatu: "Vanuatu"

@@ -1,0 +1,83 @@
+// Copyright (C) 2017 Enproduktion GmbH
+//
+// This file is part of 3gears.
+//
+// 3gears is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+//FONTS
+$fonttype_menu: "Itc Franklin Gothic Book"
+$fonttype_standard: "Franklin Gothic Demi Cond Regular"
+$fonttype_substandard: "Itc Franklin Gothic Demi"
+$fonttype_logo: "Continuum Medium Regular"
+$fonttype_text: "Arial"
+
+$fontsize_header: 70px
+$fontsize_subheader: 34px
+$fontsize_subheader2: 32px
+$fontsize_logo: 25px
+$fontsize_text: 13px
+$fontsize_menu: 18px
+$fontsize_item: 11px
+
+$lineheight_normal: 1.5
+
+@import compass/css3/font-face
++font-face("Itc Franklin Gothic Book", font-files("#{  font-path("frabk-webfont.woff")}", woff, "#{font-path("frabk-webfont.ttf")}", truetype, "#{font-path("frabk-webfont.svg")}", svg), "#{font-path("frabk-webfont.eot")}")
++font-face("Franklin Gothic Demi Cond Regular", font-files("#{font-path("fradmcn-webfont.woff")}", woff, "#{font-path("fradmcn-webfont.ttf")}", truetype, "#{font-path("fradmcn-webfont.svg")}", svg), "#{font-path("fradmcn-webfont.eot")}")
++font-face("Itc Franklin Gothic Demi", font-files("#{font-path("itc_franklin_gothic.woff")}", woff, "#{font-path("itc_franklin_gothic.ttf")}", truetype, "#{font-path("itc_franklin_gothic.svg")}", svg), "#{font-path("itc_franklin_gothic.eot")}")
++font-face("Continuum Medium Regular", font-files("#{font-path("contm-webfont.woff")}", woff, "#{font-path("contm-webfont.ttf")}", truetype, "#{font-path("contm-webfont.svg")}", svg), "#{font-path("contm-webfont.eot")}")
+
+@mixin uppercase
+  text-transform: uppercase
+
+@mixin font_menu
+  font-family: $fonttype_menu
+  font-size: $fontsize_menu
+
+@mixin font_header
+  font-family: $fonttype_standard
+  font-size: $fontsize_header
+
+@mixin font_subheader
+  font-family: $fonttype_substandard
+  font-size: $fontsize_subheader
+
+@mixin font_subheader2
+  font-family: $fonttype_substandard
+  font-size: $fontsize_subheader2
+
+@mixin font_subheader3
+  font-family: $fonttype_substandard
+  font-size: $fontsize_menu
+
+@mixin font_leftfilter
+  font-family: $fonttype_substandard
+  font-size: $fontsize_menu
+
+@mixin font_text
+  font-family: $fonttype_text
+  font-size: $fontsize_text
+
+@mixin font_navigation_small
+  font-family: $fonttype_menu
+  font-size: $fontsize_text
+
+@mixin font_item
+  font-family: $fonttype_text
+  font-size: $fontsize_item
+
+@mixin font_stats
+  font-family: $fonttype_substandard
+  font-size: $fontsize_item

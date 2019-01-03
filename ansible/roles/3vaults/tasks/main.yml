@@ -1,0 +1,59 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#=========================#
+#   Install Application   #
+#=========================#
+
+- name: create 3vaults directories
+  file: path={{ gears_directory }}/data/{{ item }} state=directory mode=0777  owner={{ gears_user }} group={{ gears_user }}
+  with_items:
+    - uploads
+    - tickets
+    - public
+    - links
+    - trash
+    - transcoding
+    - originals
+    - transcoded
+    - streamed
+    - s3
+
+- name: Chown path
+  file: path={{ gears_directory }}/data owner={{ gears_user }} group={{ gears_user }} recurse=yes
+
+- name: Build ffmpeg container
+  shell: docker build -t "ffmpeg" docker/ffmpeg chdir={{ threevaultspath }}
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Build 3vaults container
+  shell: docker-compose build chdir={{ threevaultspath }}
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Start whole stack
+  docker_service: project_src="{{ gears_directory }}" state=present
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Add executable bit
+  shell: docker exec "{{ gears_user }}"_receiver_1 chmod +x /3vaults/cgi/uploader.cgi
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- pause: seconds=4

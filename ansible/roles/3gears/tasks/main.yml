@@ -1,0 +1,148 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+- name: Stop docker engine
+  systemd: name=docker state=stopped
+
+- name: Start docker engine
+  systemd: name=docker state=started
+
+- pause: seconds=5
+
+- debug: msg="The following task will fail on it's first run with vagrant. Just restart provisioning with vagrant provision"
+
+- name: Build 3gears container
+  shell: docker-compose -f docker-build.yml build chdir={{ gears_directory }}
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Stop build-stack
+  docker_service: project_src="{{ gears_directory }}" files=docker-build.yml state=absent
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Start build-stack
+  docker_service: project_src="{{ gears_directory }}" files=docker-build.yml state=present
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- pause: seconds=30
+
+
+#=================================#
+#   Create Development Database   #
+#=================================#
+
+- name: Load Database schema
+  shell: docker exec build_3gears rake db:schema:load
+  become: yes
+  become_user: "{{ gears_user }}"
+
+
+#===========================================#
+#   Configure Sphinx Development Database   #
+#===========================================#
+
+- name:  Sphinx Setup - Delete existing Sphinx data files
+  shell: docker exec build_3gears bundle exec rake ts:clear ts:clear_rt
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name:  Sphinx Setup - Rewrite the Sphinx configuration file
+  shell: docker exec build_3gears bundle exec rake ts:configure
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name:  Sphinx Setup - Populate all your data
+  shell: docker exec build_3gears bundle exec rake ts:start ts:generate
+  become: yes
+  become_user: "{{ gears_user }}"
+
+
+#================================#
+#   Setup Development Database   #
+#================================#
+
+- name: Reset Development Database
+  shell: docker exec build_3gears bundle exec rake db:reset
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Additional Development Database Initialization
+  shell: docker exec build_3gears rake db:init
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Stop Sphinx for Development
+  shell: docker exec build_3gears rake ts:stop
+  become: yes
+  become_user: "{{ gears_user }}"
+
+
+#==========================#
+#   Create Test Database   #
+#==========================#
+
+- name: Load Database schema - Test Env
+  shell: docker exec build_3gears_test rake db:schema:load
+  become: yes
+  become_user: "{{ gears_user }}"
+
+
+#====================================#
+#   Configure Sphinx Test Database   #
+#====================================#
+
+- name:  Sphinx Setup Test Env  - Delete existing Sphinx data files
+  shell: docker exec build_3gears_test bundle exec rake ts:clear ts:clear_rt
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name:  Sphinx Setup Test Env  - Rewrite the Sphinx configuration file
+  shell: docker exec build_3gears_test bundle exec rake ts:configure
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name:  Sphinx Setup Test Env - Populate all your data
+  shell: docker exec build_3gears_test bundle exec rake ts:start ts:generate
+  become: yes
+  become_user: "{{ gears_user }}"
+
+
+#=========================#
+#   Setup Test Database   #
+#=========================#
+
+- name: Reset Test Database
+  shell: docker exec build_3gears_test bundle exec rake db:reset
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Additional Test Database Initialization
+  shell: docker exec build_3gears_test rake db:init
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Stop Sphinx for Test
+  shell: docker exec build_3gears_test rake ts:stop
+  become: yes
+  become_user: "{{ gears_user }}"
+
+- name: Stop build-stack
+  docker_service: project_src="{{ gears_directory }}" files=docker-build.yml state=absent
+  become: yes
+  become_user: "{{ gears_user }}"

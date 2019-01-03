@@ -1,0 +1,767 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+de:
+
+  unauthorized:
+    manage:
+      all: "Zugriff verweigert"
+
+  time:
+    formats:
+      time: "%d. %B %Y"
+
+  titleme:
+    formats:
+      short: "%B %d / %Y"
+
+  tag_editor:
+    placeholder: 'Inhalte'
+
+  article:
+    create: 'Artikel erstellen'
+    article: "Artikel"
+    save: 'Speichern'
+    new_asset: "Neues Asset"
+    markdown_cheat_sheet: "Markdown Cheat-Sheet"
+    abstract_blank: "Zusammenfassung"
+    content_blank: "Inhalt"
+    read_more: "Weiterlesen"
+    delete_article: 'Artikel löschen'
+    delete_asset: 'Bild löschen'
+  articles:
+    articles: "Artikel"
+    untitled: "Unbenannter Artikel"
+
+  comment:
+    confirm_delete: "Löschen bestätigen"
+    delete: "Löschen"
+    post: "Posten"
+    posting: "Posting"
+    add: "Kommentar hinzufügen"
+
+  common:
+    back: "back"
+    or: "oder"
+    choose_selection: "Wähle eine Option"
+    delete: "Löschen"
+    down: "herunter"
+    up: "herauf"
+    user_mail: "Username oder E-Mailadresse"
+    pm: "Persönliche Nachricht"
+    any: "etwas"
+    name: "Name"
+    date: "Datum"
+    footer: "Impressum | Datenschutz | Hilfe"
+    are_you_sure: "Sind sie sicher?"
+
+  license:
+    name: "Lizenz"
+    desc: "Beschreibung"
+    url: "Lizenz-URL"
+    holder: "Lizenzhalter"
+    email: "E-mail Adresse"
+    address: "Adresse"
+    custom: "Eigene Lizenz"
+    creative_commons: "Creative Commons"
+    preset:
+      names:
+        CC0: "CC0"
+        CC_BY: "CC-BY"
+        CC_BY_ND: "CC-BY-ND"
+        CC_BY_NC_SA: "CC-BY-NC-SA"
+        CC_BY_SA: "CC-BY-SA"
+        CC_BY_NC: "CC-BY-NC"
+        CC_BY_NC_ND: "CC-BY-NC-ND"
+        beerware: "Beerware"
+      descriptions:
+        CC0: "Sie dürfen das Werk kopieren, verändern, verbreiten und aufführen, sogar zu kommerziellen Zwecken, ohne um weitere Erlaubnis bitten zu müssen."
+        CC_BY: "Diese Lizenz erlaubt es anderen das Werk weiterzugeben, zu remixen, verändern, und auf dem Werk aufzubauen, kommerziell wie auch non-kommerziell, solange sie das Original mit der Namensnennung deiner würdigen. Diese Lizenz gibt anderen den größten Spielraum. Wird von CC empfohlen um maximale Verbreitung und Verwendung des Werks zu erfahren."
+        CC_BY_ND: "Diese Lizenz erlaubt die Weitergabe des Werks, kommerziell wie auch non-kommerziell, solange dies ohne Änderung des Werks geschieht. Außerdem muss dein Name bei Weitergabe genannt werden."
+        CC_BY_NC_SA: "Diese Lizenz erlaubt es anderen, das Werk zu verändern, und darauf aufzubauen, solange es non-kommerziell betrieben wird und dein Name Nennung erfährt und die daraus entstandenen Werke unter der selben lizenz veröffentlicht werden."
+        CC_BY_SA: "Diese Lizenz erlaubt es anderen das Werk für kommerzielle und non-kommerzielle Zwecke zu Verändern und darauf aufzubauen, solange dein Name genannt wird. Diese Lizenz kann mit typischen freien und open-source Lizenzen verglichen werden. Alle daraus entstehenden Werke müssen unter der gleichen Lizenz veröffentlicht werden und können infoern ebenso kommerziell genutzt werden. Dies ist auch die von Wikipedia genutzte Lizenz und wird von CC für Werke empfohlen, die Material der Wikipedia oder von Plattformen mit gleicher Lizenz verwenden."
+        CC_BY_NC: "Diese Lizenz erlaubt es anderen das Werk zu verändern oder in anderer Weise darauf aufzubauen, solange dies non-kommerziell geschieht und dein Name genannt wird. Daraus entstehende Werke müssen jedoch nicht unter der gleichen Lizenz veröffentlicht werden."
+        CC_BY_NC_ND: "Diese ist die restriktivste CC-Lizenz. Sie erlaubt anderen nur das Herunterladen und Teilen des Werkes solange dein Name genannt wird. Andere dürfen das Werk weder verändern noch kommerziell verwenden."
+        Beerware: "Solange diese Nachricht bei allen anderen Werken angegeben wird darf mit diesem alles gemacht werden. Sollten wir uns einmal treffen kannst du mir ja dafür ein Bier kaufen."
+      urls:
+        CC0: "http://creativecommons.org/publicdomain/zero/1.0/"
+        CC_BY: "http://creativecommons.org/licenses/by/3.0/"
+        CC_BY_ND: "http://creativecommons.org/licenses/by-nd/3.0"
+        CC_BY_NC_SA: "http://creativecommons.org/licenses/by-nc-sa/3.0"
+        CC_BY_SA: "http://creativecommons.org/licenses/by-sa/3.0"
+        CC_BY_NC: "http://creativecommons.org/licenses/by-nc/3.0"
+        CC_BY_NC_ND: "http://creativecommons.org/licenses/by-nc-nd/3.0"
+        beerware: ""
+
+  category:
+    all: "Alles"
+    names:
+      music: "Musik"
+      politics: "Politik"
+      sport: "Sport"
+
+  creations:
+    creations: "Kreationen"
+    all: "Alle Kreationen"
+    footage: "Footage"
+    ideas: "Ideen"
+    least_viewed: "Unbeforscht"
+    most_viewed: "meistgesehen"
+    movies: "Filme"
+    new_footage: "Neues Footage"
+    new_idea: "Neue Idee"
+    new_movie: "Neuer Film"
+    new_collection: "Neue Kollektion"
+    newest: "neuestes"
+    oldest: "ältestes"
+    different_user: "Anderen Benutzer auswählen"
+
+  crew_member:
+    add_crew_member: "Mitglied hinzufügen"
+    add_crew_member_title: "Mitgliedtitel hinzufügen"
+    who_placeholder: "Mitglied hinzufügen"
+    list_empty: "Keine Mitglieder vorhanden"
+  occupation:
+    all: "Alle"
+    types:
+      production_department: "Produktion"
+      directing_department: "Regie"
+      camera_department: "Kamera"
+      light_department: "Licht"
+      style_department: "Styling"
+      postpro_department: "Postproduktion"
+      sound_department: "Audio"
+      most_used: "Meistverwendet"
+    fields:
+      camera: "Kamera"
+      sound: "Ton"
+      light: "Licht"
+      editing: "Schnitt"
+      postproduction: "Postproduktion"
+      interviewer: "InterviewerIn"
+      production: "Produktionsleitung"
+      pa: "Produktionsassistenz"
+      director: "Regie"
+      research: "Recherche"
+      projectmgmt: "Projektleitung"
+
+  error_messages:
+    invalid_login_password_combination: "Login/Passwort falsch"
+    login_invalid: "Login falsch"
+    password_invalid: "Passwort falsch"
+    connection_error: "Verbindungsfehler (Code %{status})"
+    parser_error: "Parser error"
+    forbidden: "Fehlende Berechtigung."
+
+  footage:
+    create: 'Footage erstellen'
+    save: 'speichern'
+    publish: "Veröffentlichen"
+    collections: 'Kollektionen'
+    state:
+      not_published: "Unveröffentlicht"
+      published: "Veröffentlicht"
+    untitled: "Unbenannt"
+    tech_spec: "technisch"
+    spec: "Spezifikation"
+    team: "Team"
+    popular: "populär"
+    similar: "gleich"
+    used_in: "verwendet in"
+    delete: "Footage löschen"
+    use: "verwenden"
+    addtomovie: "Zur Kollektion hinzufügen"
+    worked_on: "Gearbeitet an"
+    infos: "Infos"
+    synopsis: "Inhalt"
+    abstract: "Zusammenfassung"
+    transcript: "Transkript"
+    crew: "Crew"
+    publish: "Veröffentlichen"
+    delete: "Entfernen"
+    delete_warning: "Warnung: Diese Operation kann nicht rückgängig gemacht werden"
+    delete_footage_headline: "Footage Entfernen"
+    delete_medium_headline: "Video Datei Entfernen"
+    delete_button: "Entfernen"
+    delete_successful: "Footage erfolgreich entfernt."
+    update_success: "Footage erfolgreich aktualisiert"
+    update_failure: "Beim Aktualisieren ist ein Fehler aufgetreten."
+    part_of_following_collections: "Teil folgender Kollektionen"
+    metadata:
+      title: "Metadaten"
+      cast: "Cast (mit Beistrich getrennt)"
+      country: "Land"
+      original_format: "Originales Format"
+      original_length: "Originale Länge (in Meter)"
+      duration: "Länge"
+      original_language: "Originale Sprache"
+      year_of_reference: "Jahr der Veröffentlichung"
+      genre: "Genre"
+      citations: "Kontext (mit Beistrich getrennt)"
+      source: "Freie Annotation"
+      upload_file: "Metadatendatei hochladen"
+
+  movies:
+    worked_on: "movies worked on"
+
+  subscriptions:
+    go_away: "geh weg"
+    new_pos: "Werde informiert, wenn eine neue Position offen ist"
+
+  frontpage:
+    footage: "Neues Footage ansehen oder aus den Favoriten auswählen"
+    movies: "Neue Filme ansehen oder aus den Favoriten auswählen"
+    read_more: "... weiterlesen"
+    see_more: "read all articles"
+    welcome: "Willkommen bei 3gears"
+    subwelcome: ""
+    page_title: "Willkommen"
+
+  pages:
+    sponsors: 'Sponsoren'
+
+  inplace_edit:
+    "yes": "Ja"
+    "no": "Nein"
+    finalize: "Finalisieren"
+    not_published: "veröffentlichen"
+    published: "Veröffentlichung zurücknehmen"
+
+  medium:
+    download: "Herunterladen"
+    download_dialog_title: "Video herunterladen"
+    delete_successful: "Das Medium wurde erfolgreich entfernt."
+    status:
+      empty: "leer"
+      pending: "warten"
+      transcoding: "umwandeln"
+      transcoding_failed: "Umwandlung fehlgeschlagen"
+      deleting: "wird gelöscht"
+      pick_thumb: "Thumbnail auswählen"
+
+  idea:
+    untitled: "Unbenannte Idee"
+
+  movie:
+    private: "privat"
+    public: "öffentlich"
+    read_script: "Script lesen"
+    finalize: "Finalisieren"
+    untitled: "Unbenannte Kollektion"
+    synopsis: "Inhalt"
+    abstract: "Zusammenfassung"
+    popular: "populär"
+    similar: "ähnliche"
+    delete_collection_header: "Kollektion entfernen"
+    delete_collection_button: "Kollektion entfernen"
+    delete_successful: "Kollektion erfolgreich entfernt."
+    script:
+      delete: "Script löschen"
+      delete_confirm: "Soll das Script wirklich gelöscht werden?"
+      add: "Neues Script hinzufügen"
+      change: "Script ändern"
+    # genre:
+    #   fiction:
+    #     fiction: "Fiktionaler Film"
+    #     action: "Action"
+    #     arthouse: "Arthouse"
+    #     comedy: "Komödie"
+    #     crime: "Verbrechen"
+    #     mondo: "Mondo Film"
+    #     drama: "Drama"
+    #     erotic: "Erotik"
+    #     experimental: "Experimentell"
+    #     fantasy: "Fantasie"
+    #     noir: "Film Noir"
+    #     horror: "Horror"
+    #     martial: "Martial Arts"
+    #     musical: "Musical"
+    #     mystery: "Mystery"
+    #     performance: "Performance"
+    #     politics: "Politisch"
+    #     romance: "Romanze"
+    #     scifi: "Sci-Fi"
+    #     thriller: "Thriller"
+    #   documentary:
+    #     documentary: "Dokumentarfilm"
+    #     feature: "Feature"
+    #     report: "Reportage"
+    #     ethno: "Ethno-Doku"
+    #     poetic: "Poetischer Dokumentarfilm"
+    #     social: "Sozialkritischer Dokumentarfilm"
+    #     verite: "Cinéma Vérité"
+    #     direct: "Direct Cinema"
+    #     mockumentary: "Mockumentary"
+    #     reality: "Realitydoku"
+    #     semidocumentary: "Semidoku"
+    #     travel: "Reisedoku"
+    #     nature: "Naturdokumentation"
+    #     docudrama: "Dokudrama"
+    #     clip: "Dokumentarischer Clip (ENG)"
+    #   attributes:
+    #     animated: "animiert"
+
+  nav:
+    account: "Account"
+    myaccount: "Mein Account"
+    user_creations: "Meine Kreationen"
+    language: "Sprache"
+    register: "Registrieren"
+    login: "Einloggen"
+    logout: "Ausloggen"
+    home: "Home"
+    ideas: "Ideen"
+    footage: "Footage"
+    movies: "Filme"
+    users: "FilmemacherInnen"
+    settings: "Einstellungen"
+    profile: "Profil"
+    act_as_header: "Agieren als:"
+    new_organisation_placeholder: "Neue Organisation"
+    create_organisation_button: "Organisation erstellen"
+
+  notification:
+    notifications: "Nachrichten"
+    added_as_crew_member_subject: "Du wurdest als Crewmitglied hinzugefügt."
+    invite_crew_member_subject: "Du wurdest eingeladen, Crewmitglied zu werden"
+    added_as_supplier_subject: "Du wurdest als Leihgeber hinzugefügt"
+    invite_supplier_subject: "Du wurdest hinzugefügt um Leihgeber zu werden"
+    report_crew_open_subject: "Neuer Crewmitgliederslot verfügbar"
+    messages:
+      added_as_crew_member:
+        movie_or_idea: "Du wurdest als Crewmitglied zu %{title} hinzugefügt"
+        footage: "Du wurdest als Crewmitglied zu %{title} hinzugefügt"
+      added_as_supplier:
+        movie_or_idea: "Du wurdest als Leihgeber zu %{title} hinzugefügt"
+        footage: "Du wurdest als Leihgeber zu %{title} hinzugefügt"
+
+  search:
+    search: "Suchen"
+    search_empty: ""
+
+  upload:
+    busy: "Upload in Bearbeitung"
+
+  uploader:
+    completed: "Upload fertiggestellt"
+    drop_here: "Datei hier hinein ziehen"
+    file_is_empty: "Datei ist leer"
+    pause: "Pausieren"
+    reselect_files: "Datei bitte neu auswählen"
+    resume: "Upload fortsetzen"
+    select_file: "Datei auswählen"
+    to_resume: "Folgende Datei auswählen um den Upload fortzusetzen:"
+    to_upload: "Um die Datei hochzuladen, bitte"
+
+  user:
+    login_form:
+      username_placeholder: "Username"
+      password_placeholder: "Passwort"
+      submit: "Einloggen"
+      register_link: "Registrieren"
+      forgot_password_link: "Passwort vergessen"
+    edit:
+      roles_header: "Berechtigung"
+      security_header: "Sicherheit"
+      password: "Neues Passwort"
+      password_confirmation: "Neues Passwort bestätigen"
+      submit_password_button: "Neues Passwort speichern"
+      delete_header: "Account löschen"
+      delete_button: "Account löschen"
+      are_you_sure_to_delete: "Wenn sie diesen Dialog akzeptieren, wird der Account und alle damit verknüpften Daten gelöscht. Wollen Sie fortfahren?"
+    firstname: "Vorname"
+    lastname: "Nachname"
+    email: "E-Mail"
+    abstract: "Zusammenfassung"
+    company: "Firma / Organisation"
+    street: "Straße"
+    zip: "PLZ"
+    city: "Stadt"
+    country: "Land"
+    about: "über mich"
+    page_title: "Filmemacherinnen"
+    joined_at: "Mitglied seit"
+    change_email: "E-Mailadresse ändern"
+    change_password: "Passwort ändern"
+    confirmation_mail_subject: "Account bestätigen"
+    email_verification_subject: "E-Mailadresse verifizieren"
+    login: "einloggen"
+    login_first: "Vorher einloggen"
+    logout_first: "Vorher ausloggen"
+    not_found: "Nicht gefunden"
+    password_reset_subject: "Passwort zurücksetzen"
+    register: "Registrieren"
+    reset_password: "Passwort zurücksetzen"
+    find_similar: "ähnliche finden"
+    invitation_mail_subject: "Einladung"
+
+  organisation:
+    abstract: "Zusammenfassung"
+    contact: "Kontakt"
+    users: "Administratorinnen"
+    email: "Email"
+    name: "Name der Organisation"
+    first_address: "Adresse"
+    second_address: "Addresszusatz"
+    zip: "Postleitzahl"
+    city: "Ort"
+    country: "Land"
+    collections: "Kollektionen"
+    delete_header: "Account löschen"
+    delete_button: "Account löschen"
+    are_you_sure_to_delete: "Wenn sie diesen Dialog akzeptieren, wird der Account und alle damit verknüpften Daten gelöscht. Wollen Sie fortfahren?"
+    wrong_password: "Falsches Passwort"
+    created: "Organisation erstellt"
+    not_found: "Organisation nicht gefunden"
+    saved: "Organisation gespeichert"
+    creation_failed: "Erstellung der Organisation fehlgeschlagen"
+
+  social_share:
+    info: "Wenn Sie diese Felder durch einen Klick aktivieren, werden Informationen an Facebook, Twitter oder Google in die USA Übertragen und unter Umständen auch dort gespeichert. Näheres erfahren Sie durch einen Klick auf das <em>i</em>."
+
+  still:
+    add: 'Still hinzufügen'
+    new_image: 'Neues Bild'
+    untitled: "Unbenanntes Still"
+    confirm_delete: "Löschen bestätigen"
+    abstract: "Zusammenfassung"
+    create_success: 'Still erfolgreich erstellt'
+    update_success: 'Still gespeichert'
+
+  document:
+    create_success: "Document erstellt"
+    confirm_delete: "Löschen bestätigen"
+
+  stuff:
+    add_stuff: "Zeugs hinzufügen"
+    add_stuff_title: "Zeugs hinzufügen"
+    invited: "eingeladen"
+    open: "offen"
+
+  account:
+    register:
+      register: "Registrieren"
+      registered: "Willkommen"
+      we_sent_you_an_email: "Bitte das E-Mail bestätigen!"
+      fulltext: "Neuen Account registrieren"
+      info: "um Dinge hochzuladen oder eigene Inhalte zu editieren."
+      confirmation: "Bestätigung erfolgreich."
+      confirmation_invalid: "Falscher Bestätigungscode. Ist dieser Abgelaufen?"
+      placeholder:
+        username: "Username"
+        email: "E-Mail"
+        first_name: "Vorname"
+        last_name: "Nachname"
+        password: "Passwort"
+        password_confirmation: "Passwortbestätigung"
+    created: "Account erstellt"
+    signup: "Account erstellen"
+    email:
+      update: "E-Mailadresse überprüfen um den Account zu aktivieren!"
+      updated: "E-mailadresse aktualisiert"
+      token_invalid: "Falscher Bestätigungscode"
+    password:
+      changed: "Passwort geändert"
+      reset_sent: "Passwortmail verschickt"
+      confirmation_invalid: "Falsche Bestätigungscode"
+    mailer:
+      salutation: "Hallo"
+      welcome: "Willkommen"
+      finish_reg: "Um die Registrierung abzuschließen, bitte auf folgenden Link klicken:"
+      wishes: "Schöne Zeit auf"
+      team: "Team"
+      your: "Dein"
+      brake: "========"
+      disclaimer: "Dieses E-Mail wurde automatisch generiert. Antworten bitte an folgende Adresse schicken:"
+      updatemail: "Folgenden Link anklicken um die neue Adresse zu bestätigen:"
+      updatepass: "Folgenden Link anklicken um die neue Adresse zu bestätigen:"
+      passreset: ""
+    invitation_needed: "Einladung benötigt"
+    invalid_invitation: "Falsche Einladung. Wurde sie schon einmal verwendet?"
+
+  session:
+    login: "Einloggen"
+    really_login: "einloggen?"
+    log_in: "Einloggen"
+    login_info: "einloggen um Inhalte zu teilen"
+
+  movie_or_idea:
+    save: 'Speichern'
+    create: 'Kollektion erstellen'
+    update_success: "Kollektion erfolgreich geändert"
+    find_similar: "Ähnliche Kollektionen finden"
+    delete: "Kollektion löschen"
+    reallydelete: "Soll die Kollektion wirklich gelöscht werden?"
+    interviews:
+      one: '1 Interview'
+      other: '%{count} Interviews'
+    watch: 'Ansehen'
+    share: 'Teilen'
+
+  activerecord:
+    attributes:
+      user:
+        login: "Benutzername oder Email"
+        password: "Passwort"
+        password_confirmation: "Passwortbestätigung"
+      movie:
+        title: "Titel"
+        synopsis: "Inhalt"
+        abstract: "Kurzbeschreibung"
+        user: "Verfasser"
+        budget_raised: "Aufgebrachtes Budget"
+        budget_desc: "Über die Finanzierung"
+        flattr_id: "Flattr"
+        created_at: "Erstellt am"
+        stuff: "Zeug"
+        tag_list: "Tags"
+        add_tags: "Tags hinzufügen:"
+
+  server:
+    busy: "beschäftigt"
+
+  search:
+    collections: "Kollektionen"
+    topics: "Inhalte"
+    years: "Jahre"
+    show:
+      header: "Suche"
+      results_header: "Suchergebnisse"
+    search_bar:
+      placeholder: "Suche mit Enter starten"
+    search_range_selector:
+      empty_state_message: "Footage mit Jahresangaben hinzufügen um nach Jahren suchen zu können"
+      set_as_filter: "Filter aktivieren"
+
+
+### NOT IN USE from here ###
+
+  countries:
+    country: "Land"
+    countries: "Länder"
+    asia:
+      asia: "Asien"
+      afghanistan: "Afghanistan"
+      armenia: "Armenien"
+      azerbaijan: "Aserbaidschan"
+      bahrain: "Bahrain"
+      bangladesh: "Bangladesch"
+      bhutan: "Bhutan"
+      brunei: "Brunei"
+      burma: "Myanmar"
+      cambodia: "Kambodscha"
+      china: "Volksrepublik China"
+      east_timor: "Osttimor"
+      hong_kong: "Hong Kong"
+      india: "Indien"
+      indonesia: "Indonesien"
+      iran: "Iran"
+      iraq: "Irak"
+      israel: "Israel"
+      japan: "Japan"
+      jordan: "Jordanien"
+      north_korea: "Nordkorea"
+      south_korea: "Südkorea"
+      kuwait: "Kuwait"
+      kyrgyzstan: "Kirgisistan"
+      laos: "Laos"
+      lebanon: "Libanon"
+      malaysia: "Malaysien"
+      maldives: "Malediven"
+      mongolia: "Mongolei"
+      nepal: "Nepal"
+      oman: "Oman"
+      pakistan: "Pakistan"
+      palestine: "Palästina"
+      philippines: "Philippines"
+      qatar: "Katar"
+      russia: "Russland"
+      saudi_arabia: "Saudi-Arabien"
+      singapore: "Singapur"
+      sri_lanka: "Sri Lanka"
+      syria: "Syrien"
+      tajikistan: "Tadschikistan"
+      thailand: "Thailand"
+      turkmenistan: "Turkmenistan"
+      united_arab_emirates: "Vereinigte Arabische Emirate"
+      uzbekistan: "Usbekistan"
+      vietnam: "Vietnam"
+      yemen: "Jemen"
+    africa:
+      africa: "Afrika"
+      algeria: "Algerien"
+      angola: "Angola"
+      benin: "Benin"
+      botswana: "Botswana"
+      burkina_faso: "Burkina Faso"
+      burundi: "Burundi"
+      cameroon: "Kamerun"
+      cape_verde: "Kap Verde"
+      central_african_republic: "Zentralafrikanische Republik"
+      chad: "Tschad"
+      comoros: "Komoren"
+      democratic_congo: "Demokratische Republik Kongo"
+      republic_congo: "Republik Kongo"
+      cote_iviore: "Elfenbeinküste"
+      djibouti: "Dschibuti"
+      egypt: "Ägypten"
+      equatorial_guinea: "Guinea"
+      eritrea: "Eritrea"
+      ethiopia: "Äthiopien"
+      gabon: "Gabun"
+      cambia: "Gambia"
+      ghana: "Ghana"
+      guinea: "Guinea"
+      guinea_bissau: "Guinea-Bissau"
+      kenya: "Kenia"
+      lesotho: "Lesotho"
+      liberia: "Liberia"
+      libya: "Libyen"
+      macao: "Macao"
+      madagascar: "Madagaskar"
+      malawi: "Malawi"
+      mali: "Mali"
+      mauritania: "Maruetanien"
+      mauritius: "Mauritius"
+      morocco: "Marokko"
+      mozambique: "Mosambik"
+      namibia: "Namibia"
+      niger: "Niger"
+      nigeria: "Nigeria"
+      rwanda: "Ruanda"
+      sao_tome: "São Tomé und Príncipe"
+      senegal: "Senegal"
+      seychelles: "Seychellen"
+      sierra_leone: "Sierra Leone"
+      somalia: "Somalia"
+      south_africa: "Südafrika"
+      south_sudan: "Südsudan"
+      sudan: "Sudan"
+      swaziland: "Swasiland"
+      tanzania: "Tansania"
+      togo: "Togo"
+      tunisia: "Tunisien"
+      Uganda: "Uganda"
+      zambia: "Sambia"
+      zimbabwe: "Simbabwe"
+    europe:
+      europe: "Europa"
+      albania: "Albanien"
+      andorra: "Andorra"
+      austria: "Österreich"
+      belarus: "Weißrussland"
+      belgium: "Belgien"
+      bosnia: "Bosnien"
+      bulgaria: "Bulgarien"
+      croatia: "Kroatien"
+      cyprus: "Zypern"
+      czech: "Tschechische Republik"
+      denmark: "Dänemark"
+      estonia: "Estland"
+      finland: "Finnland"
+      france: "Frankreich"
+      georgia: "Georgien"
+      germany: "Deutschland"
+      greece: "Griechenland"
+      hungary: "Ungarn"
+      iceland: "Island"
+      ireland: "Irland"
+      italy: "Italien"
+      kazakhstan: "Kasachstan"
+      kosovo: "Kosovo"
+      latvia: "Lettland"
+      liechtenstein: "Liechtenstein"
+      lithuania: "Litauen"
+      luxembourg: "Luxenburg"
+      macedonia: "Mazedonien"
+      malta: "Malta"
+      moldova: "Moldawien"
+      monaco: "Monaco"
+      montenegro: "Montenegro"
+      netherlands: "Niederlande"
+      norway: "Norwegen"
+      poland: "Polen"
+      portugal: "Portugal"
+      romania: "Rumänien"
+      san_marino: "San Marino"
+      serbia: "Serbien"
+      slovakia: "Slovakei"
+      slovenia: "Slovenien"
+      spain: "Spanien"
+      sweden: "Schweden"
+      switzerland: "Schweiz"
+      turkey: "Türkei"
+      ukraine: "Ukraine"
+      uk: "Vereinigtes Königreich"
+      vatican_city: "Vatikan"
+    northamerica:
+      northamerica: "Nordamerika"
+      antigue_barbuda: "Antigua und Barbuda"
+      bahamas: "Bahamas"
+      barbados: "Barbados"
+      belize: "Belize"
+      canada: "Kanada"
+      costa_rica: "Costa Rica"
+      cuba: "Kuba"
+      dominica: "Dominica"
+      dominican_republic: "Dominikanische Republik"
+      el_salvador: "El Salvador"
+      grenada: "Grenada"
+      guatemala: "Guatemala"
+      haiti: "Haiti"
+      honduras: "Honduras"
+      jamaica: "Jamaika"
+      mexico: "Mexiko"
+      nicaragua: "Nicaragua"
+      panama: "Panama"
+      saint_kitts: "St. Kitts unds Nevis"
+      saint_lucia: "St. Lucia"
+      saint_vincent: "St. Vincent und Grenadinen"
+      trinidad_tobago: "Trinidad and Tobago"
+      us: "USA"
+    southamerica:
+      southamerica: "Südamerika"
+      argentina: "Argentinien"
+      bolivia: "Bolivien"
+      brazil: "Brasilien"
+      chile: "Chile"
+      colombia: "Kolumbien"
+      ecuador: "Ecuador"
+      guyana: "Guyana"
+      paraguay: "Paraguay"
+      peru: "Peru"
+      suriname: "Suriname"
+      uruguay: "Uruguay"
+      venezuela: "Venezuela"
+    oceania:
+      oceania: "Ozeanien"
+      australia: "Australia"
+      cook: "Cookinseln"
+      fidji: "Fidschi"
+      kiribati: "Kiribati"
+      marshall_islands: "Marshallinseln"
+      micronesia: "Mikronesien"
+      nauru: "Nauru"
+      new_zealand: "Neuseeland"
+      palau: "Palau"
+      papua_new_guinea: "Papua-Neuguinea"
+      solomon_islands: "Salomonen"
+      samoa: "Samoa"
+      tonga: "Tonga"
+      tuvalu: "Tuvalu"
+      vanuatu: "Vanuatu"
+

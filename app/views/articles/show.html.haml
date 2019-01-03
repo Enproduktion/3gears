@@ -1,0 +1,119 @@
+/ Copyright (C) 2017 Enproduktion GmbH
+/
+/ This file is part of 3gears.
+/
+/ 3gears is free software: you can redistribute it and/or modify
+/ it under the terms of the GNU General Public License as published by
+/ the Free Software Foundation, either version 3 of the License, or
+/ (at your option) any later version.
+/
+/ This program is distributed in the hope that it will be useful,
+/ but WITHOUT ANY WARRANTY; without even the implied warranty of
+/ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/ GNU General Public License for more details.
+/
+/ You should have received a copy of the GNU General Public License
+/ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+- title I18n.t("articles.articles")
+
+#head_container
+  %h1= t("articles.articles")
+  %h6
+    = editable_resource_tag(:div, @article, enabled: @editing_enabled) do |f|
+      = f.select_field :category_id, category_choices("articles"), prompt: I18n.t("common.choose_selection")
+  %ul.tags
+    %li#overview
+      - if @random_article
+        - @random_article.limit(10).each do |article|
+          %li
+            = link_to article do
+              = article.title(locale)
+
+#left_container
+  #itemname
+    #moviebox
+      - if @article.cover_image
+        = image_tag @article.cover_image.content.url(:medium)
+    .iteminfo_brackets
+      .iteminfo_background
+      .iteminfo_container
+        .itemcontrols
+          .views
+            = image_tag "views.png"
+        .admincontrols
+          - if @editing_enabled
+            .script_admin
+              .upload
+                = link_to t("article.new_asset"), new_article_asset_path(@article)
+              .script_delete
+                = link_to t("common.delete"), @article, method: :delete
+              .test
+                = link_to t("article.markdown_cheat_sheet"), "http://support.mashery.com/docs/customizing_your_portal/Markdown_Cheat_Sheet"
+            .clear
+            - if not @article.published
+              = editable_resource_tag(:div, @article, enabled: @editing_enabled) do |f|
+                - if @editing_enabled
+                  = f.published_field :published        
+    
+    - if @editing_enabled
+      - @editable_locales.each do |locale|
+        = editable_resource_tag(:div, @article.content(locale), resource_path: article_content_path(@article, content_locale: locale), enabled: true, lang: locale) do |f|
+          %h2= f.string_field :title, blank: I18n.t("articles.untitled", locale: locale)
+
+      %h6
+        %select.language
+          - @editable_locales.each do |locale|
+            %option= locale
+
+    - else
+      %h2.floatl= @article.title(I18n.locale)
+
+    .clear
+    %h5 CREATED AT #{l(@article.created_at)}
+
+    - if @editing_enabled
+      - @editable_locales.each do |locale|
+        = editable_resource_tag(:div, @article.content(locale), resource_path: article_content_path(@article, content_locale: locale), enabled: true, lang: locale) do |f|
+          %p= f.text_field :abstract
+    - else
+      %p= @article.abstract(I18n.locale)
+
+    %hr
+    = render partial: "tags/tag_area", locals: { taggable: @article, editable: @editing_enabled }
+    = link_to t("article.find_similar"), similar_search_path(@article)
+
+    %ul#articleimages
+      - @assets.each do |asset|
+        %li
+          = link_to asset.content.url(:full), rel: "assets", class: "slide" do
+            = image_tag asset.content.url(:thumb)
+          - if @editing_enabled
+            .controls
+              = link_to t("common.up"), [@article, asset, :move_up], class: "move-asset-up", method: :post, remote: true
+              = link_to t("common.down"), [@article, asset, :move_down], class: "move-asset-down", method: :post, remote: true
+              = link_to t("common.delete"), [@article, asset], method: :delete, remote: true, "data-remove-closest" => "li"              
+
+    - if @editing_enabled
+      - @editable_locales.each do |locale|
+        = editable_resource_tag(:div, @article.content(locale), resource_path: article_content_path(@article, content_locale: locale), enabled: true, lang: locale) do |f|
+          #articlebody= f.rich_text_field :body
+    - else
+      #articlebody= raw RDiscount.new(@article.body(I18n.locale)).to_html
+
+    .clear
+
+    = render partial: "comments/comment_area", locals: { commentable: @article }
+
+#right_container
+  .popular
+
+    %h2= t("movie.popular")
+    .decoration
+    %ul.itemintro
+      - if @recent_articles
+        - @recent_articles.each do |article|
+          %li= render article
+
+  - if @editing_enabled
+    = link_to "DELETE", @article, method: :delete, remote: true, data: { confirm: "?" }, "data-redirect" => articles_path

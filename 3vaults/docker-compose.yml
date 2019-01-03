@@ -1,0 +1,87 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+version: "2"
+services:
+
+  core:
+    image: 3v-core
+    build:
+      context: .
+      dockerfile: docker/core/Dockerfile
+    env_file:
+      - development.env
+    ports:
+      - 4567:4567
+    volumes:
+      - ./src:/3vaults
+      - ./data:/data
+    depends_on:
+      - redis
+
+  transcoder:
+    image: 3v-transcoder
+    build:
+      context: .
+      dockerfile: docker/transcoder/Dockerfile
+    env_file:
+      - development.env
+    volumes:
+      - ./src:/3vaults
+      - ./data:/data
+    depends_on:
+      - redis
+
+  receiver:
+    image: 3v-receiver
+    build:
+      context: .
+      dockerfile: docker/receiver/Dockerfile
+    env_file:
+      - development.env
+    ports:
+      - 4568:4568
+    volumes:
+      - ./src:/3vaults
+      - ./data:/data
+
+  s3upload:
+    image: 3v-s3upload
+    build:
+      context: .
+      dockerfile: docker/s3upload/Dockerfile
+    env_file:
+      - development.env
+    volumes:
+      - ./src:/3vaults
+      - ./data:/data
+    depends_on:
+      - redis
+      - s3
+
+  redis:
+    image: redis
+
+  s3:
+    image: minio/minio
+    env_file:
+      - development.env
+    ports:
+      - 9000:9000
+    volumes:
+      - ./s3:/export
+    command: [server, /export]

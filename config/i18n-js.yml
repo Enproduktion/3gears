@@ -1,0 +1,43 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Split context in several files.
+# By default only one file with all translations is exported and
+# no configuration is required. Your settings for asset pipeline
+# are automatically recognized.
+#
+# If you want to split translations into several files or specify
+# locale contexts that will be exported, just use this file to do
+# so.
+#
+# If you're going to use the Rails 3.1 asset pipeline, change
+# the following configuration to something like this:
+#
+#   translations:
+#     - file: "app/assets/javascripts/i18n/translations.js"
+#
+# If you're running an old version, you can use something
+# like this:
+#
+#   translations:
+#     - file: "public/javascripts/translations.js"
+#       only: "*"
+#
+
+translations:
+- file: "app/assets/javascripts/i18n/translations.js" # TODO: separate language files
+  only: ["*.uploader", "*.number", "*.inplace_edit", "*.error_messages", "*.social_share", "*.search"]

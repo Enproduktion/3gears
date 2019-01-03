@@ -1,0 +1,36 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+- hosts: all
+
+  roles:
+    - stop_stack
+    - deployment
+    - update_3gears
+    - restart_stack
+
+  environment:
+    - MYSQL_DIRECTORY: "{{ gears_directory }}/mysql"
+    - MYSQL_TEST_DIRECTORY: "{{ gears_directory }}/mysql_test"
+    - MYSQL_ROOT_PASSWORD:
+    - MYSQL_PASSWORD:
+    - MYSQL_USER:
+    - MYSQL_DATABASE:
+    - MYSQL_PORT: 3306
+    - GEARS_DIRECTORY: "{{ gears_directory }}"
+    - RAILS_ENV: "{{ rails_env }}"
+    - GEARS_USER: "{{ gears_user }}"

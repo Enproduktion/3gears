@@ -1,0 +1,121 @@
+// Copyright (C) 2017 Enproduktion GmbH
+//
+// This file is part of 3gears.
+//
+// 3gears is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+//CONTAINER
+$main_container_width: 1020px
+$column_big_width: 664px
+$column_small_width: 295px
+$column_spacer: 50px
+
+//IMAGESIZES
+$pic_profilebig_width: 125px
+$pic_profilebig_height: 125px
+$pic_profilemed_width: 60px
+$pic_profilemed_height: 60px
+$pic_profilesmall_width: 44px
+$pic_profilesmall_height: 44px
+$pic_profile_menu_width: 46px
+$pic_profile_menu_height: 14px
+
+$pic_169tiny_width: 32px
+$pic_169tiny_height: 18px
+
+$pic_169small_width: 128px
+$pic_169small_height: 72px
+
+$pic_169big_width: 464px
+$pic_169big_height: 261px
+
+$pic_article_big_width: 640px
+$pic_article_big_height: 360px
+
+$pic_article_med_width: 208px
+$pic_article_med_height: 117px
+
+$pic_169orig_width: 864px
+$pic_169orig_height: 486px
+
+//LEFT SPACERS
+$lspacer01: 65px
+$lspacer02: 12px
+
+//GAPS
+$gap01: 55px
+$gap02: 16px
+
+//TOP SPACERS
+$tspacer01: 16px
+$tspacer02: 134px
+$tspacer03: 5px
+$tspacer04: 40px
+$tspacer05: 30px
+
+$t_between_cat: 40px
+
+//ESSENTIAL STRUCTURES
+
+@mixin menu2
+  width: 272px
+  padding: 4px 0px 4px 8px
+  margin-left: $lspacer02
+  +link-colors($green, $lightgrey, $green, $grey, $black)
+
+@mixin menu3
+  background-color: $black
+  border-bottom: 2px solid $green
+  padding: 2px 8px
+  list-style-type: none
+  position: absolute
+  min-width: 110px
+
+@mixin picturetexttags($margin: 0px)
+  p
+    +font_text
+    margin-top: $margin
+    // padding: 8px 0px
+
+@mixin decoration($width)
+  width: $width
+  height: 6px
+  background: $green
+  clear: both
+
+@mixin easydecoration($width)
+  width: $width
+  height: 7px
+  background: url("deco.png")
+
+@mixin basiclist
+  +font_text
+  list-style: none
+  line-height: $lineheight_normal
+  ul
+    list-style: none
+  li:last-child a
+    +link-colors($green, $lightgrey, $green, $grey, $black)
+
+  a
+    +link-colors($grey, $green, $green, $grey, $black)
+
+@mixin liststylenone
+  list-style-type: none
+
+@mixin editable_sp
+  border: 0
+  border-bottom: 1px $green solid
+  +font_text

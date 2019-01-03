@@ -1,0 +1,40 @@
+/*! videojs-captions-toggle - v0.0.0 - 2015-1-29
+ * Copyright (c) 2015 Brightcove
+ * Licensed under the Apache-2.0 license. */
+.video-js .vjs-caption-toggle-control {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+
+    background-image: url(image-path('ava/1x@_video_cc_0.png'));
+
+    &:hover {
+        background-image: url(image-path('ava/1x@_video_cc_2.png'));
+    }
+
+//disable default
+    &:before {
+      content: '';
+  }
+}
+
+.vjs-caption-toggle-control {
+    -webkit-box-ordinal-group: 5;
+    -moz-box-ordinal-group: 5;
+    -webkit-order: 5;
+    -ms-flex-order: 5;
+    -ms-order: 5;
+    order: 5;
+}
+.vjs-caption-toggle-control.vjs-selected {
+  background-image: url(image-path('ava/1x@_video_cc_2.png'));
+
+  &:hover {
+    background-image: url(image-path('ava/1x@_video_cc_0.png'));
+  }
+}
+
+/* Hide the default captions menu button */
+.vjs-captions-button {
+    display: none;
+}

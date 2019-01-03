@@ -1,0 +1,157 @@
+#!/bin/sh -e
+
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+echo "deb http://http.us.debian.org/debian stable main contrib non-free" \
+    > /etc/apt/sources.list.d/docker.list
+
+apt-get update
+
+apt-get -y install libfftw3-3 libtheora0 libopencore-amrnb-dev \
+libopencore-amrwb-dev libtheora-dev libvorbis-dev nasm libvpx-dev git-core \
+autogen build-essential yasm wget autoconf libtool gtk-doc-tools unzip \
+subversion libfaac-dev
+
+mkdir /tmp/build
+
+
+### lame ###
+
+cd /tmp/build
+wget -qO - http://ffmpeg.gerade.org/lame-3.99.5.tar.gz | tar -xz
+
+cd lame-3.99.5
+./configure --enable-nasm --disable-shared
+make && make install
+
+
+### libvpx ###
+
+cd /tmp/build
+git clone https://chromium.googlesource.com/webm/libvpx
+
+cd libvpx
+./configure
+make && make install
+
+
+### libaacplus ###
+
+apt-get -y install libtool-bin libtool
+
+cd /tmp/build
+wget -qO - http://ffmpeg.gerade.org/libaacplus-2.0.2.tar.gz | tar -xz
+
+cd libaacplus-2.0.2
+./autogen.sh
+./configure
+make && make install
+
+
+### liborc ###
+
+cd /tmp/build
+wget -qO - http://ffmpeg.gerade.org/orc_0.4.16.orig.tar.gz | tar -xz
+
+cd orc-0.4.16
+./autogen.sh
+./configure
+make && make install
+
+
+### libass ###
+
+apt-get -y install libfreetype6-dev libfribidi-dev libfontconfig1-dev
+
+cd /tmp/build
+git clone https://github.com/libass/libass.git
+
+cd libass
+git checkout tags/0.10.0
+./autogen.sh
+./configure
+ make && make install
+
+
+### libopenjpeg ###
+
+cd /tmp/build
+git clone https://github.com/uclouvain/openjpeg.git
+
+# version 1.5.2
+cd openjpeg
+git checkout 9586bc669c4623912ca657328579c878d74164a5
+./bootstrap.sh
+./configure --enable-static --enable-mj2
+make && make install
+
+
+### schroedinger ###
+
+cd /tmp/build
+wget -qO - http://ffmpeg.gerade.org/schroedinger-1.0.11.tar.gz | tar -xz
+
+cd schroedinger-1.0.11
+./autogen.sh
+./configure
+make && make install
+
+
+### ffmpeg ###
+
+apt-get -y install libx264-dev
+
+cd /tmp/build
+git clone git://source.ffmpeg.org/ffmpeg.git
+
+cd ffmpeg
+git checkout tags/n2.8.4
+./configure --enable-gpl --enable-libfaac --enable-libmp3lame \
+            --enable-libopencore-amrnb --enable-libopencore-amrwb \
+            --enable-libtheora --enable-libvorbis --enable-libvpx \
+            --enable-libx264 --enable-nonfree --enable-version3 \
+            --enable-small --enable-libaacplus --enable-libass \
+            --enable-libfreetype --enable-libopenjpeg \
+            --enable-libschroedinger
+make && make install
+
+
+### export libraries ###
+
+ldconfig
+
+
+### test ###
+
+mkdir /tmp/test
+cd /tmp/test
+
+wget http://ffmpeg.gerade.org/sintel-1024-surround.mp4
+
+ffmpeg -i sintel-1024-surround.mp4 -y -ss 10 -t 1 -an -f image2 \
+-pix_fmt yuv422p10le rendertest_%05d.j2k 2>&1 > ffmpeg.log
+! grep error ffmpeg.log
+
+
+### cleanup ###
+
+rm -r /tmp/build /tmp/test
+apt-get -y purge libopencore-amrnb-dev libtool-bin libtool libx264-dev \
+libopencore-amrwb-dev libtheora-dev libvorbis-dev nasm libvpx-dev git-core \
+autogen build-essential yasm wget autoconf libtool gtk-doc-tools unzip \
+subversion libfaac-dev

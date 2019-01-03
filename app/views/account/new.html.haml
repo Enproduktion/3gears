@@ -1,0 +1,57 @@
+/ Copyright (C) 2017 Enproduktion GmbH
+/
+/ This file is part of 3gears.
+/
+/ 3gears is free software: you can redistribute it and/or modify
+/ it under the terms of the GNU General Public License as published by
+/ the Free Software Foundation, either version 3 of the License, or
+/ (at your option) any later version.
+/
+/ This program is distributed in the hope that it will be useful,
+/ but WITHOUT ANY WARRANTY; without even the implied warranty of
+/ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/ GNU General Public License for more details.
+/
+/ You should have received a copy of the GNU General Public License
+/ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+- if @invitation
+  #head_container
+    %h1= t("account.register.register")
+    %h6= t("account.register.fulltext")
+    %ul.tags
+      %li
+        %a= t("account.register.register")
+      %li= t("account.register.info")
+
+  //////////////////////////////////
+
+  #left_container
+    = form_for @user, url: account_path(invitation: @invitation_token) do |f|
+      = f.error_messages
+      %h2= t("account.signup")
+      #regdec
+      #regform
+        %p
+          = f.label :username
+          = f.text_field :username
+        %p
+          = f.label :email
+          = f.text_field :email
+        %p
+          = f.label :first_name
+          = f.text_field :first_name
+        %p
+          = f.label :last_name
+          = f.text_field :last_name
+        %p
+          = f.label :password
+          = f.password_field :password
+        %p
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation
+        %p= f.submit t("user.register", rescue_format: nil)
+- elsif @invitation_token
+  %p= t("account.invalid_invitation")
+- else
+  %p= t("account.invitation_needed")

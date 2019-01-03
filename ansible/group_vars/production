@@ -1,0 +1,39 @@
+# Copyright (C) 2017 Enproduktion GmbH
+#
+# This file is part of 3gears.
+#
+# 3gears is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+gears_user: threegears
+gears_directory: "/home/{{ gears_user }}/threegears"
+rails_env: development
+
+
+mysql_directory: "{{ gears_directory }}/mysql"
+
+mysql_test_directory: "{{ gears_directory }}/mysql_test"
+
+mysql:
+  - { key: "MYSQL_DIRECTORY", value: "{{ gears_directory }}/mysql" }
+  - { key: "MYSQL_TEST_DIRECTORY", value: "{{ gears_directory }}/mysql_test" }
+  - { key: "MYSQL_ROOT_PASSWORD", value: "vagrant" }
+  - { key: "MYSQL_PASSWORD", value: "" }
+  - { key: "MYSQL_USER", value: "" }
+  - { key: "MYSQL_DATABASE", value: "" }
+  - { key: "MYSQL_PORT", value: "3306" }
+
+threevaultspath: "{{ gears_directory }}/3vaults"
+
+MINIO_ACCESS_KEY:
+MINIO_SECRET_KEY:

@@ -1,0 +1,97 @@
+/ Copyright (C) 2017 Enproduktion GmbH
+/
+/ This file is part of 3gears.
+/
+/ 3gears is free software: you can redistribute it and/or modify
+/ it under the terms of the GNU General Public License as published by
+/ the Free Software Foundation, either version 3 of the License, or
+/ (at your option) any later version.
+/
+/ This program is distributed in the hope that it will be useful,
+/ but WITHOUT ANY WARRANTY; without even the implied warranty of
+/ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/ GNU General Public License for more details.
+/
+/ You should have received a copy of the GNU General Public License
+/ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+!!! 5
+%html{lang: I18n.locale}
+  %head
+    %title
+      3dox
+      = " - " + content_for(:title) if content_for(:title)
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "http://piwik.gerade.org/piwik.js"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body{class: body_class}
+
+    #leadingline
+
+    #main_container
+
+      #logo 3dox.
+
+      %nav
+        %ul#menu
+          %li= link_to_unless_current(t("nav.home"), localized_root_path)
+          %li= link_to_unless_current(t("nav.ideas"), creations_path(type: :ideas))
+          %li= link_to_unless_current(t("nav.footage"), creations_path(type: :footage))
+          %li= link_to_unless_current(t("nav.movies"), creations_path(type: :movies))
+          %li= link_to_search(t("nav.users"), kind: "users", q: "")
+          .search= render partial: "search/search_form", locals: { args: nil }
+
+        #busy-indicator= t("server.busy")
+
+        %ul#flash
+          - flash.each do |key, message|
+            %li{"data-hide" => flash_display_time(key) }
+              = message
+
+        #language_selection
+          %p
+            γλώσσα
+            =image_tag "play_down.png"
+          %p language
+          %ul#language_dropdown
+            - supported_locales.each do |locale|
+              %li= link_to locale, locale: locale
+
+      - if current_user
+        #account_menu
+          %p
+            =image_tag current_user.avatar_with_default.url(:tiny)
+            =image_tag "play_down.png"
+          %p= t("nav.myaccount")
+          %ul#account_dropdown
+            %li= link_to "ACCOUNT", current_user
+            %li= link_to t("nav.settings"), account_path
+            %li= link_to t("nav.user_creations"), current_user_creations_path
+            %li= link_to t("nav.logout"), user_session_path, method: :delete
+        #notifications_menu
+          = link_to account_notifications_path do
+            =image_tag "notifications.png"
+            - if @unread_notifications.try(:>, 0)
+              %span.unread= @unread_notifications            
+      - else
+        #register= link_to t("nav.register"), new_account_path
+        #login_menu
+          %p= t("nav.login")
+          #login_dropdown
+            = render partial: "user_sessions/login_form", locals: { user_session: UserSession.new }
+
+      #clear
+
+      
+
+      = yield
+      .social_share{ "data-title" => "Welcome to 3dox." }
+
+    #footer
+      = image_tag "play_small.png"
+      =t ("common.footer")
+
+    %noscript
+      = image_tag "http://piwik.gerade.org/piwik.php?idsite=15"
